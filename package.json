@@ -8,7 +8,7 @@
     "start": "node server.js",
     "server": "nodemon serevr.js",
     "client": "npm start --prefix ./client ",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm start\" \"npm run client\""
   },
   "keywords": [],
   "author": "techinfyt ",
