@@ -4,10 +4,13 @@ const moragan = require("morgan");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const path = require("path");
-
+import { FileURLToPath } from 'url';
 //dotenv conig
 dotenv.config();
 
+//es modeule
+const __filename = FileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 //mongodb connection
 connectDB();
 
