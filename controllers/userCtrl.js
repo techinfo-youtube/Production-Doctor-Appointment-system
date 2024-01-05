@@ -42,7 +42,7 @@ const loginController = async (req, res) => {
     if (!isMatch) {
       return res
         .status(200)
-        .send({ message: "Invlid EMail or Password", success: false });
+        .send({ message: "Invalid eMail or Password", success: false });
     }
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1d",
@@ -164,7 +164,7 @@ const getAllDocotrsController = async (req, res) => {
     const doctors = await doctorModel.find({ status: "approved" });
     res.status(200).send({
       success: true,
-      message: "Docots Lists Fetched Successfully",
+      message: "Doctors Lists Fetched Successfully",
       data: doctors,
     });
   } catch (error) {
@@ -172,7 +172,7 @@ const getAllDocotrsController = async (req, res) => {
     res.status(500).send({
       success: false,
       error,
-      message: "Errro WHile Fetching DOcotr",
+      message: "Errro WHile Fetching Doctor",
     });
   }
 };
@@ -251,7 +251,7 @@ const userAppointmentsController = async (req, res) => {
     });
     res.status(200).send({
       success: true,
-      message: "Users Appointments Fetch SUccessfully",
+      message: "Users Appointments Fetched Successfully",
       data: appointments,
     });
   } catch (error) {
